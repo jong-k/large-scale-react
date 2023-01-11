@@ -8,3 +8,19 @@
 // color
 $skyblue: #CAE9FF;
 $blue: #248EEC;
+
+.autoComplete {
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px solid black
+}
+
+
+.recommendedKeyword {
+  display: flex;
+
+}
+
+.keyword-container {
+  display: flex;
+}
