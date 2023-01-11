@@ -1,6 +1,6 @@
 import React from "react";
 import { PropType } from "./AutoComplete";
-import KeywordBlock from "./common/KeywordBlock";
+import KeywordBlock from "./KeywordBlock";
 
 const KeywordList = ({ keyword, data }: PropType) => {
   return (

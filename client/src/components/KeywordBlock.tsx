@@ -6,17 +6,36 @@ interface PropType {
   keyword?: string;
   sickname?: string;
 }
-// TODO: BOLD 처리
+
+interface BoldType {
+  boldText: string;
+  basicText: string;
+}
+
+const BoldedText = ({ boldText, basicText }: BoldType) => {
+  const splittedArr = basicText.split(boldText);
+  return (
+    <span>
+      {splittedArr.map((item, idx) => (
+        <>
+          {item}
+          {idx !== splittedArr.length - 1 && <b>{boldText}</b>}
+        </>
+      ))}
+    </span>
+  );
+};
+
 const KeywordBlock = ({ mode, keyword, sickname }: PropType) => {
   return mode === "display" ? (
     <main className="keyword-container">
       <AiOutlineSearch />
-      <p>{keyword}</p>
+      <b>{keyword}</b>
     </main>
   ) : (
     <main className="keyword-container">
       <AiOutlineSearch />
-      <p>{sickname}</p>
+      <BoldedText boldText={keyword} basicText={sickname} />
     </main>
   );
 };

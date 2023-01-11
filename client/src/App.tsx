@@ -1,8 +1,3 @@
-/*
-TODO: src/components에 인풋에 포커스되면 만들 컴포넌트 만들기
-TODO: 디바운스 적용?
-
- */
 import { ChangeEvent, useEffect, useState, useCallback } from "react";
 
 import { getData } from "./api";
