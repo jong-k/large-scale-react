@@ -1,7 +1,7 @@
-import { ChangeEvent, useEffect, useState, useCallback } from "react";
+import { ChangeEvent, useState, useCallback } from "react";
 
-import { getData } from "./api";
 import { debounce } from "./utils";
+import { useFetch } from "./hooks/useFetch";
 import AutoComplete from "./components/AutoComplete";
 
 export interface ResultType {
@@ -11,7 +11,6 @@ export interface ResultType {
 
 function App() {
   const [inputValue, setInputValue] = useState("");
-  const [data, setData] = useState([]);
   const [isFocus, setIsFocus] = useState(false);
 
   const MemoizedHandleChange = useCallback(
@@ -21,21 +20,7 @@ function App() {
     [],
   );
 
-  useEffect(() => {
-    if (inputValue.trim() !== "") {
-      const fetchData = async () => {
-        const newData = await getData(inputValue);
-        if (Array.isArray(newData)) setData(newData);
-        console.info(
-          "%ccalling api",
-          "background: radial-gradient(red, green, blue); padding: 1px;",
-        );
-      };
-      fetchData();
-      return;
-    }
-    setData([]);
-  }, [inputValue]);
+  const { status, data } = useFetch(inputValue);
 
   return (
     <main className="container">
@@ -52,7 +37,11 @@ function App() {
           setIsFocus(false);
         }}
       />
-      {isFocus && <AutoComplete keyword={inputValue} data={data} />}
+      {isFocus && status === "fetching" ? (
+        <h2>검색중</h2>
+      ) : (
+        <AutoComplete keyword={inputValue} data={data} />
+      )}
     </main>
   );
 }

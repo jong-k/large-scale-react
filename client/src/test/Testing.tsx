@@ -1,19 +1,35 @@
-import React, { useState, useEffect } from "react";
+import { ChangeEvent, useEffect, useState, useCallback } from "react";
 
-const Car = () => {
-  return <h2>Boom!!</h2>;
-};
+import { debounce } from "../utils";
+import AutoComplete from "../components/AutoComplete";
+import { useFetch } from "../hooks/useFetch";
 
-const Testing = () => {
+export interface ResultType {
+  sickCd: string;
+  sickNm: string;
+}
+
+function Testing() {
+  const [inputValue, setInputValue] = useState("");
   const [isFocus, setIsFocus] = useState(false);
 
-  useEffect(() => {
-    console.log(isFocus);
-  }, [isFocus]);
+  const MemoizedHandleChange = useCallback(
+    debounce((e: ChangeEvent<HTMLInputElement>) => {
+      setInputValue(e.target.value);
+    }, 200),
+    [],
+  );
+
+  const { status, data } = useFetch(inputValue);
+
   return (
-    <div>
+    <main className="container">
+      <h2 className="header">임상시험 관련 정보 검색</h2>
       <input
+        className="search-bar"
         type="text"
+        onChange={MemoizedHandleChange}
+        placeholder="질환명을 입력해주세요"
         onFocus={() => {
           setIsFocus(true);
         }}
@@ -21,9 +37,13 @@ const Testing = () => {
           setIsFocus(false);
         }}
       />
-      {isFocus && <Car />}
-    </div>
+      {isFocus && status === "fetching" ? (
+        <div>검색중</div>
+      ) : (
+        <AutoComplete keyword={inputValue} data={data} />
+      )}
+    </main>
   );
-};
+}
 
 export default Testing;
