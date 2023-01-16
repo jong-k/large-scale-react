@@ -1,9 +1,10 @@
-import { ChangeEvent } from "react";
-
-export const debounce = (callback: Function, delay: number) => {
-  let timerId = Number.MIN_SAFE_INTEGER;
-  return (event: ChangeEvent) => {
+export const debounce = <F extends (...args: any[]) => any>(
+  callback: F,
+  delay: number,
+) => {
+  let timerId: number;
+  return (...args: Parameters<F>) => {
     if (timerId > 0) clearTimeout(timerId);
-    timerId = setTimeout(callback, delay, event);
+    timerId = setTimeout(callback, delay, ...args);
   };
 };
