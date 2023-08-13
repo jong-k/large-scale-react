@@ -1,7 +1,8 @@
 import Title from "./components/Title";
 // import DadJoke from "./components/DadJoke.tsx";
 // import LoginForm from "./components/LoginForm.tsx";
-import AxiosGlobalInstance from "./components/AxiosGlobalInstance.tsx";
+// import AxiosGlobalInstance from "./components/AxiosGlobalInstance.tsx";
+import AxiosCustomInstance from "./components/AxiosCustomInstance.tsx";
 
 export default function App() {
   return (
@@ -9,7 +10,8 @@ export default function App() {
       <Title />
       {/*<DadJoke />*/}
       {/*<LoginForm />*/}
-      <AxiosGlobalInstance />
+      {/*<AxiosGlobalInstance />*/}
+      <AxiosCustomInstance />
     </main>
   );
 }

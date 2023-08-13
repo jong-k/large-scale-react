@@ -88,7 +88,7 @@ try {
 // common 넣어도 되고 안넣어도 됨
 // axios.defaults.headers.common['Accept'] = 'application/json';
 axios.defaults.headers['Accept'] = 'application/json';
-
+// 이후 axios instance 사용할 때 url 에는 공백을 넣든, 추가 query path를 넣으면 됨
 axios.defaults.baseURL = 'https://api.example.com';
 
 // common 넣어도 되고 안넣어도 됨
