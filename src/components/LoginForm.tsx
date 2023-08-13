@@ -15,7 +15,7 @@ export default function LoginForm() {
   const onSubmitLoginInfo = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://localhost:3000", loginInfo);
+      await axios.post("https://localhost:3000", loginInfo);
       console.log(loginInfo);
     } catch (err) {
       console.log(err);

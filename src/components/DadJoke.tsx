@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "https://icanhazdadjoke.com";
+// const API_URL = "https://icanhazdadjoke.com";
 
 export default function DadJoke() {
   const [joke, setJoke] = useState("여기에 농담이 표시됩니다");
@@ -9,7 +9,7 @@ export default function DadJoke() {
   const fetchJoke = async () => {
     setJoke("Loading...");
     try {
-      const { data } = await axios.get(API_URL, {
+      const { data } = await axios.get("", {
         headers: {
           Accept: "application/json",
         },
