@@ -100,6 +100,7 @@ axios.defaults.headers.post['Content-Type'] =
 ```
 
 #### Custom Instance
+- axios 폴더 참조!
 
 ```js
 const authFetch = axios.create({
@@ -112,7 +113,8 @@ const authFetch = axios.create({
 
 #### Interceptors
 
-- global and custom
+- global and custom에 적용 가능
+- axios 폴더 참조!
 
 ```js
 authFetch.interceptors.request.use(

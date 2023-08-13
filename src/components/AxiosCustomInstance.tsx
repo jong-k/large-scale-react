@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { dadJokeInstance } from "../axios/customInstance-one.ts";
+import { dadJokeInstance } from "../axios/customInstance.ts";
 
 export default function AxiosCustomInstance() {
   const [page, setPage] = useState(1);
