@@ -1,4 +1,6 @@
-import Post from "./components/Post";
+import { lazy, Suspense } from "react";
+
+const Post = lazy(() => import("./components/Post"));
 
 const DUMMY_POST = {
   author: "김종한",
@@ -14,7 +16,9 @@ const DUMMY_POST = {
 export default function App() {
   return (
     <div>
-      <Post post={DUMMY_POST} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Post post={DUMMY_POST} />
+      </Suspense>
     </div>
   );
 }
