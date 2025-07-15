@@ -1,6 +1,4 @@
-import { lazy, Suspense } from "react";
-
-const Post = lazy(() => import("./components/Post"));
+import { useState } from "react";
 
 const DUMMY_POST = {
   author: "김종한",
@@ -14,11 +12,22 @@ const DUMMY_POST = {
 };
 
 export default function App() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [Post, setPost] = useState<any>(null);
+
+  const handleClick = () => {
+    import("./components/Post").then((module) => {
+      setPost(() => module.default);
+    });
+  };
+
   return (
     <div>
-      <Suspense fallback={<div>Loading...</div>}>
+      {Post ? (
         <Post post={DUMMY_POST} />
-      </Suspense>
+      ) : (
+        <button onClick={handleClick}>Post 보기</button>
+      )}
     </div>
   );
 }
