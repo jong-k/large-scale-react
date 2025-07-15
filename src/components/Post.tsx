@@ -1,3 +1,7 @@
+import PostHeader from "./PostHeader";
+import PostContent from "./PostContent";
+import PostFooter from "./PostFooter";
+
 interface Post {
   author: string;
   title: string;
@@ -12,17 +16,17 @@ interface Post {
 export default function Post({ post }: { post: Post }) {
   return (
     <div>
-      <img src={post.profileUrl} alt={`${post.author}'s profile`} />
-      <h1>{post.title}</h1>
-      <p>{post.text}</p>
-      <div>Author: {post.author}</div>
-      <div>Date: {post.date}</div>
-      <p>{`${post.numLikes} likes`}</p>
-      <p>{`${post.numComments} comments`}</p>
-      <p>{`${post.numShares} shares`}</p>
-      <button>Like</button>
-      <button>Share</button>
-      <button>Comment</button>
+      <PostHeader
+        authorName={post.author}
+        profileUrl={post.profileUrl}
+        timestamp={post.date}
+      />
+      <PostContent title={post.title} text={post.text} />
+      <PostFooter
+        numLikes={post.numLikes}
+        numComments={post.numComments}
+        numShares={post.numShares}
+      />
     </div>
   );
 }
