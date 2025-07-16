@@ -2,7 +2,7 @@ import PostHeader from "./PostHeader";
 import PostContent from "./PostContent";
 import PostFooter from "./PostFooter";
 
-export interface Post {
+export interface PostProps {
   author: string;
   title: string;
   text: string;
@@ -13,7 +13,7 @@ export interface Post {
   numShares: number;
 }
 
-export default function Post({ post }: { post: Post }) {
+export default function Post({ post }: { post: PostProps }) {
   return (
     <div>
       <PostHeader
