@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { Post } from "./components/Post";
 
 const DUMMY_POST = {
   author: "김종한",
@@ -12,19 +13,20 @@ const DUMMY_POST = {
 };
 
 export default function App() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [Post, setPost] = useState<any>(null);
+  const [PostComp, setPostComp] = useState<React.ComponentType<{
+    post: Post;
+  }> | null>(null);
 
   const handleClick = () => {
     import("./components/Post").then((module) => {
-      setPost(() => module.default);
+      setPostComp(() => module.default);
     });
   };
 
   return (
     <div>
-      {Post ? (
-        <Post post={DUMMY_POST} />
+      {PostComp ? (
+        <PostComp post={DUMMY_POST} />
       ) : (
         <button onClick={handleClick}>Post 보기</button>
       )}

@@ -2,7 +2,7 @@ import PostHeader from "./PostHeader";
 import PostContent from "./PostContent";
 import PostFooter from "./PostFooter";
 
-interface Post {
+export interface Post {
   author: string;
   title: string;
   text: string;
