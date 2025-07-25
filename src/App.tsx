@@ -7,6 +7,7 @@ export default function App() {
       <Link to="/intersection-observer">
         Intersection Observer 활용한 동적 임포트
       </Link>
+      <Link to="context">Context API</Link>
     </div>
   );
 }
