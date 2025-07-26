@@ -18,7 +18,7 @@ createRoot(document.getElementById("root")!).render(
           element={<IntersectionObserverPage />}
         />
         <Route
-          path="context"
+          path="/context"
           element={
             <Suspense fallback={<div>Loading...</div>}>
               <ContextPage />

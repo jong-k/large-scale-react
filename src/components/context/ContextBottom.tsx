@@ -16,7 +16,12 @@ export default function ContextBottom() {
       }}
     >
       <h2>This is Bottom Context</h2>
-      <input value={message} onChange={(e) => setMessage(e.target.value)} />
+      <div style={{ display: "flex", gap: "1rem" }}>
+        <div>
+          <h3>Context API</h3>
+          <input value={message} onChange={(e) => setMessage(e.target.value)} />
+        </div>
+      </div>
     </div>
   );
 }

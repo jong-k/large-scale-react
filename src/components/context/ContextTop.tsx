@@ -15,7 +15,15 @@ export default function ContextTop() {
         }}
       >
         <h2>This is Top Context</h2>
-        <input value={message} onChange={(e) => setMessage(e.target.value)} />
+        <div style={{ display: "flex", gap: "1rem" }}>
+          <div>
+            <h3>Context API</h3>
+            <input
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+          </div>
+        </div>
         <ContextMiddle />
       </div>
     </MessageContext>
