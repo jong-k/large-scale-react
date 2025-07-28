@@ -11,3 +11,4 @@
 5. [디자인 시스템](https://github.com/jong-k/large-scale-react/tree/main/notes/ch5)
 6. [데이터 가져오기(Data Fetching)](https://github.com/jong-k/large-scale-react/tree/main/notes/ch6)
 7. [상태 관리](https://github.com/jong-k/large-scale-react/tree/main/notes/ch7)
+8. [국제화](https://github.com/jong-k/large-scale-react/tree/main/notes/ch8)
