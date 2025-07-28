@@ -6,6 +6,7 @@ import InteractionImportPage from "./pages/InteractionImportPage.tsx";
 import IntersectionObserverPage from "./pages/IntersectionObserverPage.tsx";
 
 const ContextPage = lazy(() => import("./pages/ContextPage.tsx"));
+const RtlTextPage = lazy(() => import("./pages/RtlTextPage.tsx"));
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -22,6 +23,14 @@ createRoot(document.getElementById("root")!).render(
           element={
             <Suspense fallback={<div>Loading...</div>}>
               <ContextPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="rtl-text"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <RtlTextPage />
             </Suspense>
           }
         />

@@ -8,6 +8,7 @@ export default function App() {
         Intersection Observer 활용한 동적 임포트
       </Link>
       <Link to="context">Context API (+useReducer)</Link>
+      <Link to="rtl-text">RTL 텍스트</Link>
     </div>
   );
 }
