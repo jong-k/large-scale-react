@@ -1,21 +1,8 @@
 import { Link } from "react-router";
-import { useEffect, useState } from "react";
+import { useColorScheme } from "./hooks/useColorScheme";
 
 export default function App() {
-  const [colorScheme, setColorScheme] = useState<string>("");
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    
-    const updateColorScheme = () => {
-      setColorScheme(mediaQuery.matches ? "dark" : "light");
-    };
-
-    updateColorScheme();
-    mediaQuery.addEventListener("change", updateColorScheme);
-
-    return () => mediaQuery.removeEventListener("change", updateColorScheme);
-  }, []);
+  const { colorScheme } = useColorScheme();
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
