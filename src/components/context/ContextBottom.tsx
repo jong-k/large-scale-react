@@ -2,7 +2,7 @@ import { use } from "react";
 import {
   MessageContext,
   type MessageContextValue,
-} from "../../context/message";
+} from "../../contexts/MessageContext";
 
 export default function ContextBottom() {
   const { message, setMessage } = use<MessageContextValue>(MessageContext);

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ContextMiddle from "./ContextMiddle";
-import { MessageContext } from "../../context/message";
+import { MessageContext } from "../../contexts/MessageContext";
 
 export default function ContextTop() {
   const [message, setMessage] = useState("Hello World!");
