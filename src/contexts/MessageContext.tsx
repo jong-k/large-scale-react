@@ -2,10 +2,9 @@ import { createContext } from "react";
 
 export interface MessageContextValue {
   message: string;
-  setMessage: React.Dispatch<React.SetStateAction<string>>;
+  setMessage: (message: string) => void;
 }
 
-export const MessageContext = createContext<MessageContextValue>({
-  message: "",
-  setMessage: () => {},
-});
+export const MessageContext = createContext<MessageContextValue | undefined>(
+  undefined
+);
