@@ -13,6 +13,7 @@ export default function App() {
       </Link>
       <Link to="context">Context API (+useReducer)</Link>
       <Link to="rtl-text">RTL 텍스트</Link>
+      <Link to="ab-test">A/B 테스트 (Statsig)</Link>
     </div>
   );
 }
