@@ -4,15 +4,20 @@ import Confetti from "react-confetti";
 interface ConfettiButtonProps {
   color: string;
   text?: string;
+  onClick?: () => void;
 }
 
 export default function ConfettiButton({
   text = "Click me!",
   color,
+  onClick,
 }: ConfettiButtonProps) {
   const [clicked, setClicked] = useState(false);
 
-  const handleClick = () => !clicked && setClicked(true);
+  const handleClick = () => {
+    if (!clicked) setClicked(true);
+    if (onClick) onClick();
+  };
   const onConfettiEnd = () => setClicked(false);
 
   return (
