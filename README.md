@@ -14,3 +14,4 @@
 8. [국제화](https://github.com/jong-k/large-scale-react/tree/main/notes/ch8)
 9. [코드 조직화하기](https://github.com/jong-k/large-scale-react/tree/main/notes/ch9)
 10. [개인화와 A/B 테스팅](https://github.com/jong-k/large-scale-react/tree/main/notes/ch10)
+11. [확장 가능한 웹 아키텍쳐](https://github.com/jong-k/large-scale-react/tree/main/notes/ch11)
