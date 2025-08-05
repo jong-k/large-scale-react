@@ -10,6 +10,7 @@ import StatsigProvider from "./components/common/StatsigProvider.tsx";
 const ContextPage = lazy(() => import("./pages/ContextPage.tsx"));
 const RtlTextPage = lazy(() => import("./pages/RtlTextPage.tsx"));
 const AbTestPage = lazy(() => import("./pages/AbTestPage.tsx"));
+const CounterPage = lazy(() => import("./pages/CounterPage.tsx"));
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -47,6 +48,14 @@ createRoot(document.getElementById("root")!).render(
               element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <AbTestPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/counter"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <CounterPage />
                 </Suspense>
               }
             />
