@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import CounterPage from "./CounterPage";
+import CounterPage from "../../pages/CounterPage";
 
 describe("CounterPage", () => {
   // 기본 렌더링 테스트 - h2 제목 요소가 화면에 렌더링되는지 확인
