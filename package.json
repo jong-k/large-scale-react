@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test:unit": "jest"
+    "test:unit": "jest",
+    "test:e2e": "playwright test --ui"
   },
   "dependencies": {
     "@statsig/react-bindings": "^3.20.3",
