@@ -3,7 +3,6 @@ import Counter from "./Counter";
 
 export default function CounterList() {
   const { counters } = useFetchCounters();
-  console.log("🚀 ~ CounterList ~ counterItems:", counters);
 
   return (
     <div>
