@@ -78,7 +78,9 @@ src/
 ## Git Hooks
 
 ### Pre-Push Hook
+
 Automatically runs before `git push` to ensure code quality:
+
 - ESLint check (`pnpm lint`)
 - Prettier formatting check (`pnpm format:check`)
 
