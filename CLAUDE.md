@@ -13,6 +13,8 @@ This is a Korean-language React project demonstrating large-scale web applicatio
 - `pnpm dev` - Start development server (Vite)
 - `pnpm build` - Build for production (TypeScript compile + Vite build)
 - `pnpm lint` - Run ESLint
+- `pnpm format` - Format code with Prettier
+- `pnpm format:check` - Check code formatting without writing
 - `pnpm preview` - Preview production build
 
 ### Testing
@@ -32,6 +34,7 @@ This is a Korean-language React project demonstrating large-scale web applicatio
 - **Build Tool**: Vite
 - **Testing**: Jest (unit) + Playwright (e2e)
 - **Linting**: ESLint 9 with TypeScript ESLint
+- **Formatting**: Prettier 3.6 (integrated with ESLint via eslint-config-prettier)
 - **Analytics**: Statsig (web analytics, A/B testing, session replay)
 
 ### Project Structure
