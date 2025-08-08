@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Package manager files
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# Test outputs
+coverage/
+playwright-report/
+test-results/
+
+# Cache directories
+.cache/
+.vite/
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
