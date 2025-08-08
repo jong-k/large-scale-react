@@ -16,6 +16,7 @@ This is a Korean-language React project demonstrating large-scale web applicatio
 - `pnpm format` - Format code with Prettier
 - `pnpm format:check` - Check code formatting without writing
 - `pnpm preview` - Preview production build
+- `pnpm prepare` - Initialize Husky git hooks
 
 ### Testing
 
@@ -35,6 +36,7 @@ This is a Korean-language React project demonstrating large-scale web applicatio
 - **Testing**: Jest (unit) + Playwright (e2e)
 - **Linting**: ESLint 9 with TypeScript ESLint
 - **Formatting**: Prettier 3.6 (integrated with ESLint via eslint-config-prettier)
+- **Git Hooks**: Husky 9.1 with pre-push hooks for linting and formatting checks
 - **Analytics**: Statsig (web analytics, A/B testing, session replay)
 
 ### Project Structure
@@ -72,6 +74,15 @@ src/
 - RTL text support
 - A/B testing with Statsig
 - Color scheme detection and management
+
+## Git Hooks
+
+### Pre-Push Hook
+Automatically runs before `git push` to ensure code quality:
+- ESLint check (`pnpm lint`)
+- Prettier formatting check (`pnpm format:check`)
+
+If any check fails, the push is blocked until issues are resolved.
 
 ## Path Aliases
 
