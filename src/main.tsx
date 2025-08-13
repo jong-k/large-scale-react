@@ -11,6 +11,9 @@ const ContextPage = lazy(() => import("./pages/ContextPage.tsx"));
 const RtlTextPage = lazy(() => import("./pages/RtlTextPage.tsx"));
 const AbTestPage = lazy(() => import("./pages/AbTestPage.tsx"));
 const CounterPage = lazy(() => import("./pages/CounterPage.tsx"));
+const GenericComponentPage = lazy(
+  () => import("./pages/GenericComponentPage.tsx")
+);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -56,6 +59,14 @@ createRoot(document.getElementById("root")!).render(
               element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <CounterPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/generic-component"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <GenericComponentPage />
                 </Suspense>
               }
             />

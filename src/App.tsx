@@ -15,6 +15,7 @@ export default function App() {
       <Link to="rtl-text">RTL 텍스트</Link>
       <Link to="ab-test">A/B 테스트 (Statsig)</Link>
       <Link to="/counter">카운터</Link>
+      <Link to="/generic-component">제네릭 컴포넌트</Link>
     </div>
   );
 }
