@@ -18,3 +18,4 @@
 12. [테스팅](https://github.com/jong-k/large-scale-react/tree/main/notes/ch12)
 13. [툴링](https://github.com/jong-k/large-scale-react/tree/main/notes/ch13)
 14. [기술적 마이그레이션](https://github.com/jong-k/large-scale-react/tree/main/notes/ch14)
+15. [타입스크립트](https://github.com/jong-k/large-scale-react/tree/main/notes/ch15)
