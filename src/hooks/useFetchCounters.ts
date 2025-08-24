@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import type { CounterItem } from "../types/counter";
 
 export const useFetchCounters = () => {
@@ -6,8 +6,8 @@ export const useFetchCounters = () => {
 
   useEffect(() => {
     fetch("/api/counter-items")
-      .then((res) => res.json())
-      .then((data) => setCounters(data))
+      .then(res => res.json())
+      .then(data => setCounters(data))
       .catch(() => setCounters([{ id: 1, name: "기본 카운터1", count: 0 }]));
   }, []);
 

@@ -1,5 +1,5 @@
-import { useFetchCounters } from "../../hooks/useFetchCounters";
 import Counter from "./Counter";
+import { useFetchCounters } from "../../hooks/useFetchCounters";
 import HotWrapper from "../base/HotWrapper";
 
 export default function CounterList() {
@@ -8,7 +8,7 @@ export default function CounterList() {
   return (
     <div>
       <HotWrapper>{[<h2>Counter List</h2>]}</HotWrapper>
-      {counters.map((counterItem) => (
+      {counters.map(counterItem => (
         <Counter key={counterItem.id} counterItem={counterItem} />
       ))}
     </div>

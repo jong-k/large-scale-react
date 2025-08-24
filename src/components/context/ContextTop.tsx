@@ -18,10 +18,7 @@ export default function ContextTop() {
         <div style={{ display: "flex", gap: "1rem" }}>
           <div>
             <h3>Context API</h3>
-            <input
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            />
+            <input value={message} onChange={e => setMessage(e.target.value)} />
           </div>
         </div>
         <ContextMiddle />

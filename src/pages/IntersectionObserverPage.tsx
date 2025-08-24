@@ -1,4 +1,4 @@
-import { useState, useRef, Suspense, lazy } from "react";
+import { lazy, Suspense, useRef, useState } from "react";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 const DUMMY_POST = {

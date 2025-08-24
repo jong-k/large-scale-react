@@ -113,16 +113,12 @@ export default function App() {
   const [Post, setPost] = useState(null);
 
   const handleClick = () => {
-    import("./components/Post").then((module) => {
+    import("./components/Post").then(module => {
       setPost(() => module.default); // default export. named export 의 경우 default 대신 모듈 이름 넣으면 됨
     });
   };
 
-  return (
-    <div>
-      {Post ? <Post /> : <button onClick={handleClick}>Post 보기</button>}
-    </div>
-  );
+  return <div>{Post ? <Post /> : <button onClick={handleClick}>Post 보기</button>}</div>;
 }
 ```
 

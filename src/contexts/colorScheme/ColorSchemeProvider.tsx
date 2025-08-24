@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
-import { ColorSchemeContext, type ColorScheme } from "./ColorSchemeContext";
+import { type ColorScheme, ColorSchemeContext } from "./ColorSchemeContext";
 
 interface ColorSchemeProviderProps {
   children: ReactNode;
@@ -22,9 +22,5 @@ export const ColorSchemeProvider = ({ children }: ColorSchemeProviderProps) => {
     return () => mediaQuery.removeEventListener("change", updateColorScheme);
   }, []);
 
-  return (
-    <ColorSchemeContext value={{ colorScheme, setColorScheme }}>
-      {children}
-    </ColorSchemeContext>
-  );
+  return <ColorSchemeContext value={{ colorScheme, setColorScheme }}>{children}</ColorSchemeContext>;
 };

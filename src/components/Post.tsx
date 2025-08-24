@@ -1,6 +1,6 @@
-import PostHeader from "./PostHeader";
 import PostContent from "./PostContent";
 import PostFooter from "./PostFooter";
+import PostHeader from "./PostHeader";
 
 export interface PostProps {
   author: string;
@@ -16,17 +16,9 @@ export interface PostProps {
 export default function Post({ post }: { post: PostProps }) {
   return (
     <div>
-      <PostHeader
-        authorName={post.author}
-        profileUrl={post.profileUrl}
-        timestamp={post.date}
-      />
+      <PostHeader authorName={post.author} profileUrl={post.profileUrl} timestamp={post.date} />
       <PostContent title={post.title} text={post.text} />
-      <PostFooter
-        numLikes={post.numLikes}
-        numComments={post.numComments}
-        numShares={post.numShares}
-      />
+      <PostFooter numLikes={post.numLikes} numComments={post.numComments} numShares={post.numShares} />
     </div>
   );
 }

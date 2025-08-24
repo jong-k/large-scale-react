@@ -18,20 +18,14 @@ export default function InteractionImportPage() {
   }> | null>(null);
 
   const handleClick = () => {
-    import("../components/Post").then((module) => {
+    import("../components/Post").then(module => {
       setPostComp(() => module.default);
     });
   };
 
   return (
     <div>
-      <div>
-        {PostComp ? (
-          <PostComp post={DUMMY_POST} />
-        ) : (
-          <button onClick={handleClick}>Post 보기</button>
-        )}
-      </div>
+      <div>{PostComp ? <PostComp post={DUMMY_POST} /> : <button onClick={handleClick}>Post 보기</button>}</div>
     </div>
   );
 }

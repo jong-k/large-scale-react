@@ -18,8 +18,8 @@ export default function Counter({ counterItem }: CounterProps) {
         count: count + num,
       }),
     })
-      .then((res) => res.json())
-      .then((updatedItem) => setCount(updatedItem.count))
+      .then(res => res.json())
+      .then(updatedItem => setCount(updatedItem.count))
       .catch(() => setCount(count + num));
   };
 

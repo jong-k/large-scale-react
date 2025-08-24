@@ -62,9 +62,7 @@ await expect(page.locator("button").filter({ hasText: "+" })).toBeVisible();
 
 // 해결된 코드
 await expect(page.locator("text=Counter:").first()).toBeVisible();
-await expect(
-  page.locator("button").filter({ hasText: "+" }).first()
-).toBeVisible();
+await expect(page.locator("button").filter({ hasText: "+" }).first()).toBeVisible();
 ```
 
 ### 3. DOM Selector 정확성 문제
@@ -127,12 +125,10 @@ const firstPlusButton = firstCounterDiv
 **해결 방법:**
 
 ```typescript
-test("should handle API failure and show fallback counter", async ({
-  page,
-}) => {
+test("should handle API failure and show fallback counter", async ({ page }) => {
   // beforeEach 모킹을 override하여 API 실패 시나리오 생성
   await page.unroute("**/api/counter-items");
-  await page.route("**/api/counter-items", async (route) => {
+  await page.route("**/api/counter-items", async route => {
     console.log("API failure test: Aborting request");
     await route.abort();
   });
@@ -143,9 +139,7 @@ test("should handle API failure and show fallback counter", async ({
   await page.waitForTimeout(2000);
 
   // 기본 카운터가 표시되는지 확인
-  await expect(
-    page.locator("h3").filter({ hasText: "기본 카운터1" })
-  ).toBeVisible();
+  await expect(page.locator("h3").filter({ hasText: "기본 카운터1" })).toBeVisible();
   await expect(page.locator("span").filter({ hasText: "0" })).toBeVisible();
 });
 ```
@@ -176,7 +170,7 @@ for (let i = 0; i < h3Elements.length; i++) {
 ### 2. API 인터셉트 확인
 
 ```typescript
-await page.route("**/api/counter-items", async (route) => {
+await page.route("**/api/counter-items", async route => {
   console.log("API route intercepted:", route.request().url());
   // ... 모킹 로직
 });

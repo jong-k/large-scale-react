@@ -114,11 +114,9 @@ export { SignUpForm } from "./SignUpForm.tsx";
 
 ```tsx
 // .../Authentication/Authentication.tsx
-
 // before
 // import { LoginForm } from "./components/LoginForm";
 // import { SignUpForm } from "./components/SignUpForm";
-
 // after
 import { LoginForm, SignUpForm } from "./components";
 ```

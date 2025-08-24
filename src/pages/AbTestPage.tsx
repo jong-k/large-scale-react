@@ -1,8 +1,4 @@
-import {
-  useExperiment,
-  useStatsigClient,
-  useGateValue,
-} from "@statsig/react-bindings";
+import { useExperiment, useGateValue, useStatsigClient } from "@statsig/react-bindings";
 import ConfettiButton from "../components/base/ConfettiButton";
 
 export default function AbTestPage() {
@@ -13,11 +9,7 @@ export default function AbTestPage() {
 
   const logClick = () => {
     client.logEvent("button_click", showGreenButton ? "green" : "blue");
-    console.log(
-      "statsig logged:",
-      "button_click",
-      showGreenButton ? "green" : "blue"
-    );
+    console.log("statsig logged:", "button_click", showGreenButton ? "green" : "blue");
   };
 
   return (
@@ -26,10 +18,7 @@ export default function AbTestPage() {
         <h2>A/B 테스트 w/ Statsig</h2>
         <h3>50% 확률로 green, 50% 확률로 blue 버튼이 보여집니다</h3>
         <div>
-          <ConfettiButton
-            color={showGreenButton ? "green" : "blue"}
-            onClick={logClick}
-          />
+          <ConfettiButton color={showGreenButton ? "green" : "blue"} onClick={logClick} />
         </div>
       </div>
       <div>

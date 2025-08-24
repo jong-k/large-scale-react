@@ -7,6 +7,4 @@ export interface ColorSchemeContextValue {
   setColorScheme: (scheme: ColorScheme) => void;
 }
 
-export const ColorSchemeContext = createContext<
-  ColorSchemeContextValue | undefined
->(undefined);
+export const ColorSchemeContext = createContext<ColorSchemeContextValue | undefined>(undefined);

@@ -19,10 +19,9 @@ export default function ContextMiddle() {
         <h3>useReducer</h3>
         <select
           style={{ fontSize: "1.75rem" }}
-          onChange={(e) => {
+          onChange={e => {
             const name = e.target.value;
-            const value =
-              EMOJI_LIST.find((emoji) => emoji.name === name)?.value || "";
+            const value = EMOJI_LIST.find(emoji => emoji.name === name)?.value || "";
             dispatchEmoji({ type: "CHANGE_EMOJI", payload: { name, value } });
           }}
         >

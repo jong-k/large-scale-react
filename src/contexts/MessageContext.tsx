@@ -5,6 +5,4 @@ export interface MessageContextValue {
   setMessage: (message: string) => void;
 }
 
-export const MessageContext = createContext<MessageContextValue | undefined>(
-  undefined
-);
+export const MessageContext = createContext<MessageContextValue | undefined>(undefined);

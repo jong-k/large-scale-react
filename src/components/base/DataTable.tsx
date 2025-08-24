@@ -18,9 +18,7 @@ interface DataTableProps<T> {
   data: Array<T>;
 }
 
-export default function DataTable<T extends object>({
-  data,
-}: DataTableProps<T>) {
+export default function DataTable<T extends object>({ data }: DataTableProps<T>) {
   const columns = Object.keys(data[0]);
 
   return (

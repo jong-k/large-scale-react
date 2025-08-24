@@ -7,11 +7,7 @@ interface ConfettiButtonProps {
   onClick?: () => void;
 }
 
-export default function ConfettiButton({
-  text = "Click me!",
-  color,
-  onClick,
-}: ConfettiButtonProps) {
+export default function ConfettiButton({ text = "Click me!", color, onClick }: ConfettiButtonProps) {
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
@@ -31,13 +27,7 @@ export default function ConfettiButton({
       onClick={handleClick}
     >
       <span style={color === "blue" ? { color: "white" } : {}}>{text}</span>
-      {clicked && (
-        <Confetti
-          gravity={0.5}
-          recycle={false}
-          onConfettiComplete={onConfettiEnd}
-        />
-      )}
+      {clicked && <Confetti gravity={0.5} recycle={false} onConfettiComplete={onConfettiEnd} />}
     </button>
   );
 }
