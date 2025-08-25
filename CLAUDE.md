@@ -22,7 +22,7 @@ This is a Korean-language React project demonstrating large-scale web applicatio
 
 - `pnpm test:unit` - Run Jest unit tests
 - `pnpm test:e2e` - Run Playwright e2e tests with UI
-- Unit tests: Located in `src/tests/unit/` with pattern `*.test.(ts|tsx)`
+- Unit tests: Located anywhere in `src/` with pattern `*.test.(ts|tsx)` or in `__tests__/` directories
 - E2E tests: Located in `src/tests/e2e/` with pattern `*.spec.ts`
 - Test setup: `src/setupTests.ts` (configured in Jest)
 
@@ -88,7 +88,7 @@ If any check fails, the push is blocked until issues are resolved.
 
 ## Path Aliases
 
-- `@/*` maps to `src/*` (configured in Jest, may need Vite config update for consistency)
+- `@/*` maps to `src/*` (configured in Jest only - Vite config currently uses default paths)
 
 ## Notes Structure
 
