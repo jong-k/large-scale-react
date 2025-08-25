@@ -7,7 +7,7 @@ export default function CounterList() {
 
   return (
     <div>
-      <HotWrapper>{[<h2>Counter List</h2>]}</HotWrapper>
+      <HotWrapper>{[<h2 key={1}>Counter List</h2>]}</HotWrapper>
       {counters.map(counterItem => (
         <Counter key={counterItem.id} counterItem={counterItem} />
       ))}
