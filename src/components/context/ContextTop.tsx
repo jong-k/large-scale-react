@@ -1,6 +1,8 @@
-import { useState } from "react";
-import ContextMiddle from "./ContextMiddle";
+import { lazy, useState } from "react";
 import { MessageContext } from "../../contexts/MessageContext";
+import LazyComponent from "../base/LazyComponent";
+
+const ContextMiddle = lazy(() => import("./ContextMiddle"));
 
 export default function ContextTop() {
   const [message, setMessage] = useState("Hello World!");
@@ -21,7 +23,7 @@ export default function ContextTop() {
             <input value={message} onChange={e => setMessage(e.target.value)} />
           </div>
         </div>
-        <ContextMiddle />
+        <LazyComponent component={ContextMiddle} />
       </div>
     </MessageContext>
   );
