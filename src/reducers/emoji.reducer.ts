@@ -6,13 +6,6 @@ export interface EmojiState {
 export type EmojiAction = { type: "CHANGE_EMOJI"; payload: EmojiState };
 
 export const emojiReducer = (state: EmojiState, action: EmojiAction) => {
-  switch (action.type) {
-    case "CHANGE_EMOJI":
-      return {
-        ...state,
-        ...action.payload,
-      };
-    default:
-      throw new Error();
-  }
+  if (action.type === "CHANGE_EMOJI") return { ...state, ...action.payload };
+  throw new Error("Unhandled action type in emojiReducer");
 };
