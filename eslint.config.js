@@ -1,25 +1,37 @@
-import prettierConfig from "eslint-config-prettier";
-import reactHooks from "eslint-plugin-react-hooks";
+import { importX } from "eslint-plugin-import-x";
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import { configs as reactHooksConfigs } from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
-import { globalIgnores } from "eslint/config";
+import { configs as sonarConfigs } from "eslint-plugin-sonarjs";
+import pluginUnicorn from "eslint-plugin-unicorn";
+import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
-import tseslint from "typescript-eslint";
+import { configs as tsConfigs } from "typescript-eslint";
 import js from "@eslint/js";
 
-export default tseslint.config([
+export default defineConfig([
   globalIgnores(["dist"]),
   {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      js.configs.recommended,
-      tseslint.configs.recommended,
-      reactHooks.configs["recommended-latest"],
-      reactRefresh.configs.vite,
-      prettierConfig,
-    ],
+    files: ["**/*.{ts,tsx,cts,mts}"],
+    extends: ["js/recommended"],
+    plugins: { js },
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+    },
+  },
+  importX.flatConfigs.recommended,
+  importX.flatConfigs.typescript,
+  pluginUnicorn.configs.recommended,
+  reactHooksConfigs["recommended-latest"],
+  reactRefresh.configs.vite,
+  sonarConfigs.recommended,
+  ...tsConfigs.recommended,
+  eslintPluginPrettierRecommended,
+  {
+    rules: {
+      "unicorn/prevent-abbreviations": "off",
+      "unicorn/filename-case": "off",
     },
   },
 ]);

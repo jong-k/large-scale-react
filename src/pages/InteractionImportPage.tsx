@@ -13,9 +13,12 @@ const DUMMY_POST = {
 };
 
 export default function InteractionImportPage() {
-  const [PostComp, setPostComp] = useState<React.ComponentType<{
-    post: PostProps;
-  }> | null>(null);
+  const [PostComp, setPostComp] = useState<
+    | React.ComponentType<{
+        post: PostProps;
+      }>
+    | undefined
+  >();
 
   const handleClick = () => {
     import("../components/Post").then(module => {

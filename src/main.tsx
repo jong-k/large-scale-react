@@ -13,7 +13,7 @@ const AbTestPage = lazy(() => import("./pages/AbTestPage.tsx"));
 const CounterPage = lazy(() => import("./pages/CounterPage.tsx"));
 const GenericComponentPage = lazy(() => import("./pages/GenericComponentPage.tsx"));
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.querySelector("#root")!).render(
   <StrictMode>
     <StatsigProvider>
       <ColorSchemeProvider>

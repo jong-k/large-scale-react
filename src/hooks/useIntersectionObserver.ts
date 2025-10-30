@@ -16,11 +16,9 @@ export const useIntersectionObserver = (
     if (!node) return;
 
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          callback();
-        }
-      });
+      for (const entry of entries) {
+        if (entry.isIntersecting) callback();
+      }
     }, options);
 
     observer.observe(node);
