@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-commented-code */
 import { defineConfig, devices } from "@playwright/test";
 
 /**
