@@ -10,7 +10,7 @@ export const ColorSchemeProvider = ({ children }: ColorSchemeProviderProps) => {
   const [colorScheme, setColorScheme] = useState<ColorScheme>("dark");
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const mediaQuery = globalThis.matchMedia("(prefers-color-scheme: dark)");
 
     const updateColorScheme = () => {
       setColorScheme(mediaQuery.matches ? "dark" : "light");
