@@ -12,6 +12,7 @@ export default function PostFooter({
       <p>{`${numLikes} likes`}</p>
       <p>{`${numComments} comments`}</p>
       <p>{`${numShares} shares`}</p>
+      <p>아래 버튼 동작 안함</p>
       <button>Like</button>
       <button>Share</button>
       <button>Comment</button>
