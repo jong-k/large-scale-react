@@ -25,7 +25,7 @@ test.describe("Counter Page Tests", () => {
           status: 200,
           contentType: "application/json",
           body: JSON.stringify({
-            id: parseInt(counterId || "1"),
+            id: Number(counterId || "1"),
             name: `테스트 카운터${counterId}`,
             count: requestBody.count,
           }),
