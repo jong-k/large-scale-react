@@ -28,4 +28,10 @@ export default defineConfig([
   sonarConfigs.recommended,
   ...tsConfigs.recommended,
   eslintPluginPrettierRecommended,
+  {
+    rules: {
+      "unicorn/prevent-abbreviations": "off",
+      "unicorn/filename-case": "off",
+    },
+  },
 ]);
