@@ -1,6 +1,6 @@
 import { importX } from "eslint-plugin-import-x";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
-import reactHooks from "eslint-plugin-react-hooks";
+import { configs as reactHooksConfigs } from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import { configs as sonarConfigs } from "eslint-plugin-sonarjs";
 import pluginUnicorn from "eslint-plugin-unicorn";
@@ -23,7 +23,7 @@ export default defineConfig([
   importX.flatConfigs.recommended,
   importX.flatConfigs.typescript,
   pluginUnicorn.configs.recommended,
-  reactHooks.configs["recommended-latest"],
+  reactHooksConfigs["recommended-latest"],
   reactRefresh.configs.vite,
   sonarConfigs.recommended,
   ...tsConfigs.recommended,
