@@ -33,7 +33,7 @@
   <tr>
     <td>3</td>
     <td>리소스 이름에는 명사를 사용</td>
-    <td>리소스는 시스템의 엔티티들을 나타내므로 명사를 사용해야한다. 리소스가 액션이 아닌 사물임을 명확하게 해준다.</td>
+    <td>리소스는 시스템의 엔티티들을 나타내므로 명사를 사용해야 한다. 리소스가 액션이 아닌 사물임을 명확하게 해준다.</td>
     <td>/getCustomers, /createOrder</td>
     <td>/customers, /orders</td>
   </tr>
@@ -96,7 +96,7 @@ POST /products/{productId}/reviews
   <tr>
     <td>2</td>
     <td>URL 최소화하기</td>
-    <td>중첩은 유용하지만, URL이 너무 길어지는 것은 피해야한다</td>
+    <td>중첩은 유용하지만, URL이 너무 길어지는 것은 피해야 한다</td>
     <td></td>
   </tr>
   <tr>
@@ -301,7 +301,7 @@ POST /products/{productId}/reviews
 - 예시
 
 ```
-Example E-commerce API를 사용하면 개발자들은 우리 제품 카탈로그, 주문 관리, 고객 데이터를 그들의 애플리케이션에 통합할 수 있다. 모든 API의 요청의 Base URL은 https://api.example.com/v1 이며 인증을 위해서는 OAuth 2.0을 사용한다.
+Example E-commerce API를 사용하면 개발자들은 우리 제품 카탈로그, 주문 관리, 고객 데이터를 그들의 애플리케이션에 통합할 수 있다. 모든 API 요청의 Base URL은 https://api.example.com/v1 이며 인증을 위해서는 OAuth 2.0을 사용한다.
 ```
 
 ### 상세한 엔드포인트 문서
