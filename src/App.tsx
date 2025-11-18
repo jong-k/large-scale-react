@@ -14,6 +14,7 @@ export default function App() {
       <Link to="ab-test">A/B 테스트 (Statsig)</Link>
       <Link to="/counter">카운터</Link>
       <Link to="/generic-component">제네릭 컴포넌트</Link>
+      <Link to="/transition">useTransition 테스트</Link>
     </div>
   );
 }
