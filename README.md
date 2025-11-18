@@ -19,3 +19,6 @@
 13. [툴링](https://github.com/jong-k/large-scale-react/tree/main/notes/ch13)
 14. [기술적 마이그레이션](https://github.com/jong-k/large-scale-react/tree/main/notes/ch14)
 15. [타입스크립트](https://github.com/jong-k/large-scale-react/tree/main/notes/ch15)
+16. [라우팅](https://github.com/jong-k/large-scale-react/tree/main/notes/ch16)
+17. [사용자 중심 API 디자인](https://github.com/jong-k/large-scale-react/tree/main/notes/ch17)
+18. [리액트의 미래](https://github.com/jong-k/large-scale-react/tree/main/notes/ch18)
