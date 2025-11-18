@@ -1,38 +1,49 @@
-import { useState, useTransition } from "react";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
+
+type State = {
+  status: "success" | "error";
+  name: string;
+  message: string;
+};
 
 const submitForm = async () => {
   return new Promise(resolve => setTimeout(resolve, 2000));
 };
 
+const action = async (currentState: State, formData: FormData): Promise<State> => {
+  try {
+    await submitForm();
+    return { ...currentState, status: "success" as const, name: formData.get("name") as string, message: "" };
+  } catch {
+    return { ...currentState, status: "error" as const, name: "", message: "에러 발생" };
+  }
+};
+
 export default function TransitionPage() {
-  const [formValue, setFormValue] = useState<{ name?: string; message?: string }>();
-  const [isPending, startTransition] = useTransition();
-
-  const formAction = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    startTransition(async () => {
-      try {
-        await submitForm();
-        const name = ((e.target as HTMLFormElement).elements.namedItem("name") as HTMLInputElement)?.value;
-        setFormValue({ name });
-      } catch {
-        setFormValue({ message: "에러 발생" });
-      }
-    });
-  };
+  const [state, dispatch, isPending] = useActionState<State, FormData>(action, {
+    status: "success",
+    message: "",
+    name: "",
+  } as State);
 
   return (
     <div>
       <h2>useTransition 테스트 페이지</h2>
-      <form onSubmit={formAction} style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+      <form action={dispatch} style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
         <label htmlFor="name">이름</label>
-        <input id="name" />
-        <button>검색</button>
+        <input id="name" name="name" disabled={isPending} />
+        <Button text="검색" />
       </form>
       {isPending && <h4>Loading...</h4>}
-      {formValue?.message && <h4>{formValue.message}</h4>}
-      {formValue?.name ? <h4>검색 결과: {formValue.name}</h4> : <h4>검색 결과가 없습니다.</h4>}
+      {state?.message && <h4>{state.message}</h4>}
+      {state?.name ? <h4>검색 결과: {state.name}</h4> : <h4>검색 결과가 없습니다.</h4>}
     </div>
   );
+}
+
+function Button({ text }: { text: string }) {
+  const { pending } = useFormStatus();
+
+  return <button disabled={pending}>{pending ? "🔄" : text}</button>;
 }
